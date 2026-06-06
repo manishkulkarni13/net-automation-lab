@@ -1,0 +1,17 @@
+{
+  "success": [
+    {
+      "host": "spine1"
+    },
+    {
+      "host": "spine2"
+    },
+    {
+      "host": "leaf1"
+    },
+    {
+      "host": "leaf2"
+    }
+  ],
+  "failed": []
+}
