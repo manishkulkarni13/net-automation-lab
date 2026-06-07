@@ -1,0 +1,96 @@
+2026-06-07 10:45:08,424 - nornir.core.task -    ERROR -      start() - Host 'leaf1': task 'render_and_push' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/scripts/04_jinja2_push.py", line 14, in render_and_push
+    config = template.render(host=task.host)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/loopback.j2", line 3, in top-level template code
+    ip address {{ hosts.data.loopback_ip}} 255.255.255.255
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'hosts' is undefined
+
+2026-06-07 10:45:08,425 - nornir.core.task -    ERROR -      start() - Host 'leaf2': task 'render_and_push' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/scripts/04_jinja2_push.py", line 14, in render_and_push
+    config = template.render(host=task.host)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/loopback.j2", line 3, in top-level template code
+    ip address {{ hosts.data.loopback_ip}} 255.255.255.255
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'hosts' is undefined
+
+2026-06-07 10:45:08,425 - nornir.core.task -    ERROR -      start() - Host 'spine2': task 'render_and_push' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/scripts/04_jinja2_push.py", line 14, in render_and_push
+    config = template.render(host=task.host)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/loopback.j2", line 3, in top-level template code
+    ip address {{ hosts.data.loopback_ip}} 255.255.255.255
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'hosts' is undefined
+
+2026-06-07 10:45:08,425 - nornir.core.task -    ERROR -      start() - Host 'spine1': task 'render_and_push' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/scripts/04_jinja2_push.py", line 14, in render_and_push
+    config = template.render(host=task.host)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/loopback.j2", line 3, in top-level template code
+    ip address {{ hosts.data.loopback_ip}} 255.255.255.255
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'hosts' is undefined
+
+2026-06-07 10:47:36,748 - nornir.core.task -    ERROR -      start() - Host 'spine2': task 'render_and_push' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/scripts/04_jinja2_push.py", line 16, in render_and_push
+    os.makedir("outputs/rendered", exist_ok=True)
+AttributeError: module 'os' has no attribute 'makedir'
+
+2026-06-07 10:47:36,748 - nornir.core.task -    ERROR -      start() - Host 'leaf1': task 'render_and_push' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/scripts/04_jinja2_push.py", line 16, in render_and_push
+    os.makedir("outputs/rendered", exist_ok=True)
+AttributeError: module 'os' has no attribute 'makedir'
+
+2026-06-07 10:47:36,748 - nornir.core.task -    ERROR -      start() - Host 'spine1': task 'render_and_push' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/scripts/04_jinja2_push.py", line 16, in render_and_push
+    os.makedir("outputs/rendered", exist_ok=True)
+AttributeError: module 'os' has no attribute 'makedir'
+
+2026-06-07 10:47:36,749 - nornir.core.task -    ERROR -      start() - Host 'leaf2': task 'render_and_push' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/scripts/04_jinja2_push.py", line 16, in render_and_push
+    os.makedir("outputs/rendered", exist_ok=True)
+AttributeError: module 'os' has no attribute 'makedir'
+

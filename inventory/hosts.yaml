@@ -5,6 +5,8 @@ spine1:
   password: admin 
   groups:
     - spine 
+  data:
+    loopback_ip: 10.0.0.1
   
 spine2: 
   hostname: 172.20.20.12
@@ -13,6 +15,8 @@ spine2:
   password: admin
   groups:
     - spine 
+  data: 
+   loopback_ip: 10.0.0.2
 
 leaf1:
   hostname: 172.20.20.13
@@ -21,6 +25,8 @@ leaf1:
   password: admin 
   groups:
     - leaf 
+  data:
+    loopback_ip: 10.0.1.1
 
 leaf2:
   hostname: 172.20.20.14
@@ -29,3 +35,5 @@ leaf2:
   password: admin
   groups:
       - leaf
+  data:
+    loopback_ip: 10.0.1.2
