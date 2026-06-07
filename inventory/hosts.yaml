@@ -5,6 +5,10 @@ spine1:
   password: admin 
   groups:
     - spine 
+  connection_options:
+    netmiko:
+      extras:
+        secret: admin
   data:
     loopback_ip: 10.0.0.1
   
@@ -14,7 +18,11 @@ spine2:
   username: admin
   password: admin
   groups:
-    - spine 
+    - spine
+  connection_options:
+    netmiko:
+      extras:
+        secret: admin
   data: 
    loopback_ip: 10.0.0.2
 
@@ -25,6 +33,10 @@ leaf1:
   password: admin 
   groups:
     - leaf 
+  connection_options:
+    netmiko:
+      extras:
+        secret: admin
   data:
     loopback_ip: 10.0.1.1
 
@@ -35,5 +47,9 @@ leaf2:
   password: admin
   groups:
       - leaf
+  connection_options:
+    netmiko:
+      extras:
+        secret: admin 
   data:
     loopback_ip: 10.0.1.2
