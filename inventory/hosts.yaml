@@ -1,0 +1,31 @@
+spine1:
+  hostname: 172.20.20.11
+  platform: eos
+  username: admin
+  password: admin 
+  groups:
+    - spine 
+  
+spine2: 
+  hostname: 172.20.20.12
+  platform: eos 
+  username: admin
+  password: admin
+  groups:
+    - spine 
+
+leaf1:
+  hostname: 172.20.20.13
+  platform: eos 
+  username: admin
+  password: admin 
+  groups:
+    - leaf 
+
+leaf2:
+  hostname: 172.20.20.14
+  platform: eos 
+  username: admin
+  password: admin
+  groups:
+      - leaf
