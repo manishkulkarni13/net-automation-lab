@@ -1,0 +1,7 @@
+hostname {{ host.name}}
+!
+ntp server {{host.groups[0].data.ntp_servers[0]}}
+!
+ip name-server vrf default {{host.groups[0].data.dns_servers[0]}}
+!
+ip routing

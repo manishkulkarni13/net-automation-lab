@@ -1,4 +1,5 @@
-netauto/
+nornir.log
+outputs/rendered/
 netauto/
 *.pyc
 clab-automation-lab/

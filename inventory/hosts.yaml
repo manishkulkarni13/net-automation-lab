@@ -11,6 +11,26 @@ spine1:
         secret: admin
   data:
     loopback_ip: 10.0.0.1
+    bgp:
+      local_as : 65001
+      neighbors:
+        - ip: 10.1.1.1
+          remote_as: 65101
+        - ip: 10.1.1.3
+          remote_as: 65102
+        - ip: 10.1.2.1
+          remote_as: 65000
+    interfaces:
+        - name: Ethernet1
+          ip : 10.1.1.0/31
+          description: to_leaf1
+        - name: Ethernet2 
+          ip: 10.1.1.2/31
+          description: to_leaf2
+        - name: Ethernet3
+          ip: 10.1.2.0/31
+          description: to_frr_linux
+
   
 spine2: 
   hostname: 172.20.20.12
@@ -24,7 +44,26 @@ spine2:
       extras:
         secret: admin
   data: 
-   loopback_ip: 10.0.0.2
+    loopback_ip: 10.0.0.2
+    bgp:
+      local_as: 65002
+      neighbors:
+        - ip: 10.1.1.5
+          remote_as: 65101
+        - ip: 10.1.1.7
+          remote_as: 65102
+        - ip: 10.1.2.3
+          remote_as: 65000
+    interfaces:
+        - name: Ethernet1 
+          ip: 10.1.1.4/31
+          description: to_leaf1
+        - name: Ethernet2 
+          ip: 10.1.1.6/31
+          description: to_leaf2
+        - name: Ethernet3 
+          ip: 10.1.2.2/31
+          description: to_frr_linux
 
 leaf1:
   hostname: 172.20.20.13
@@ -39,6 +78,20 @@ leaf1:
         secret: admin
   data:
     loopback_ip: 10.0.1.1
+    bgp:
+      local_as: 65101
+      neighbors:
+         - ip: 10.1.1.0
+           remote_as: 65001
+         - ip: 10.1.1.4
+           remote_as: 65002
+    interfaces:
+        - name: Ethernet1
+          ip: 10.1.1.1/31
+          description: to_spine1
+        - name: Ethernet2
+          ip: 10.1.1.5/31
+          description: to_spine2 
 
 leaf2:
   hostname: 172.20.20.14
@@ -53,3 +106,17 @@ leaf2:
         secret: admin 
   data:
     loopback_ip: 10.0.1.2
+    bgp:
+      local_as: 65102
+      neighbors:
+        - ip: 10.1.1.2 
+          remote_as: 65001
+        - ip: 10.1.1.6
+          remote_as: 65002
+    interfaces:
+        - name: Ethernet1
+          ip: 10.1.1.3/31
+          description: to_spine1
+        - name: Ethernet2
+          ip: 10.1.1.7/31
+          description: to_spine2

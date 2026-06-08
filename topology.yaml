@@ -21,9 +21,22 @@ topology:
       kind: ceos
       image: ceos:4.32.2F
       mgmt-ipv4: 172.20.20.14
+    
+    frr:
+      kind: linux
+      image: frrouting/frr:latest
+      mgmt-ipv4: 172.20.20.20
+      binds:
+        - configs/frr.conf:/etc/frr/frr.conf
+      exec: 
+        - sed -i 's/bgpd=no/bgpd=yes/' /etc/frr/daemons
+#        - sleep 10
+#        - /etc/init.d/frr restart
 
   links:
     - endpoints: ["spine1:eth1", "leaf1:eth1"]
     - endpoints: ["spine1:eth2", "leaf2:eth1"]
     - endpoints: ["spine2:eth1", "leaf1:eth2"]
     - endpoints: ["spine2:eth2", "leaf2:eth2"]
+    - endpoints: ["spine1:eth3", "frr:eth1"]
+    - endpoints: ["spine2:eth3", "frr:eth2"]

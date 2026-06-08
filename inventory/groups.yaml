@@ -1,7 +1,18 @@
 spine:
   data:
     role: spine 
+    ospf_area: 0.0.0.0
+    ntp_servers:
+      - 10.0.0.1
+    dns_servers:
+      - 8.8.8.8 
 
 leaf:
   data:
     role: leaf
+    ospf_area: 0.0.0.0
+    ntp_servers: 
+      - 10.0.0.1
+    dns_servers:
+      - 8.8.8.8 
+

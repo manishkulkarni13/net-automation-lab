@@ -1,0 +1,12 @@
+router bgp {{host.data.bgp.local_as}}
+    router-id {{host.data.loopback_ip}}
+    network {{ host.data.loopback_ip }}/32
+    !
+    {% for nbr in host.data.bgp.neighbors%}
+        neighbor {{nbr.ip}} remote-as {{nbr.remote_as}}
+    {% endfor %}
+    !
+    address-family ipv4
+    {% for nbr in host.data.bgp.neighbors%}
+     neighbor {{nbr.ip}} activate 
+    {% endfor %}

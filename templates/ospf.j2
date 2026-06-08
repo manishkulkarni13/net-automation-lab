@@ -1,0 +1,6 @@
+router ospf 1
+    router-id {{host.data.loopback_ip}}
+    network {{host.data.loopback_ip}}/32 area {{host.groups[0].data.ospf_area}}
+    {% for nw in host.data.interfaces%}
+        network {{nw.ip}} area {{host.groups[0].data.ospf_area}} 
+    {% endfor %}

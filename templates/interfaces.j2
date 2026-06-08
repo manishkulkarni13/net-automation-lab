@@ -1,0 +1,11 @@
+interface loopback100 
+description MANAGED_BY_AUTOMATION
+ip address {{host.data.loopback_ip}}/32
+
+{% for iface in host.data.interfaces %}
+    interface {{iface.name}}
+    no switchport
+    ip address {{iface.ip}}
+    description {{iface.description}}
+{% endfor %} 
+
