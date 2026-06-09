@@ -1,5 +1,10 @@
-nornir.log
-outputs/rendered/
 netauto/
 *.pyc
+__pycache__/
+nornir.log
 clab-automation-lab/
+*.tar.xz
+*.tar
+.env
+outputs/
+backups/
