@@ -1,0 +1,2 @@
+bgp_asn: 65102
+loopback_ip: 10.0.1.2

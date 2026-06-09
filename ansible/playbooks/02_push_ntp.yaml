@@ -1,0 +1,24 @@
+---
+
+- name: Push NTP and DNS config to all devices 
+  hosts: network
+  gather_facts: false 
+
+
+  tasks:
+    - name: Push NTP config
+      arista.eos.eos_config:
+        lines:
+          - ntp server 10.0.0.1 prefer
+          - ntp server 8.8.8.8 
+        save_when: changed 
+    
+    - name: Verfigy NTP config 
+      arista.eos.eos_command:
+        commands:
+          - show ntp status 
+      register: ntp_output
+
+    - name: Display NTP status
+      ansible.builtin.debug:
+        msg: "{{ inventory_hostname}}: {{ntp_output.stdout[0].split('\n')[0]}}"

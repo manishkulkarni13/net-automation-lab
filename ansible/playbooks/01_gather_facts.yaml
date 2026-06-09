@@ -1,0 +1,23 @@
+---
+
+- name: Gather facts from all network devices
+  hosts: network
+  gather_facts: false
+
+  tasks:
+    - name: Get device version
+      arista.eos.eos_command:
+        commands:
+          - show version 
+          - show ip interface brief 
+      register: device_info
+
+    - name: Display output
+      ansible.builtin.debug:
+        var: device_info.stdout_lines
+
+    - name: Save output to file
+      ansible.builtin.copy:
+        content: "{{ device_info.stdout | join('\n')}}"
+        dest: "/tmp/{{ inventory_hostname }}_facts.txt"
+      delegate_to: localhost
