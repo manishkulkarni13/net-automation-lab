@@ -1,2 +1,7 @@
 bgp_asn: 65102
-loopback_ip: 10.0.1.2
+bgp_router_id: 10.0.1.2
+bgp_neighbors:
+  - ip: 10.1.1.2
+    remote_as: 65001
+  - ip: 10.1.1.6
+    remote_as: 65002

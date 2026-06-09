@@ -1,0 +1,10 @@
+---
+- name: validate bgp
+  arista.eos.eos_command:
+    commands:
+      - show ip bgp summary
+  register: bgp_state
+
+- name: show bgp state
+  ansible.builtin.debug:
+    msg: "{{ inventory_hostname }} BGP: {{ bgp_state.stdout[0].split('\n')[0] }}"

@@ -1,0 +1,7 @@
+---
+- name: Configure BGP on all devices
+  hosts: network
+  gather_facts: false
+
+  roles:
+    - bgp_config

@@ -1,0 +1,12 @@
+---
+- name: Render BGP config from template
+  ansible.builtin.template:
+    src: bgp.j2
+    dest: /tmp/{{ inventory_hostname }}_bgp.cfg
+  delegate_to: localhost
+
+- name: Push BGP config
+  arista.eos.eos_config:
+    lines: "{{ lookup('file', '/tmp/' + inventory_hostname + '_bgp.cfg') | split('\n') }}"
+    save_when: changed
+  notify: validate bgp

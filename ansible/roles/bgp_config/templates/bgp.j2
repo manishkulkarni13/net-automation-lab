@@ -1,0 +1,10 @@
+router bgp {{ bgp_asn }}
+  router-id {{ bgp_router_id }}
+  {% for neighbor in bgp_neighbors %}
+  neighbor {{ neighbor.ip }} remote-as {{ neighbor.remote_as }}
+  {% endfor %}
+  !
+  address-family ipv4
+  {% for neighbor in bgp_neighbors %}
+    neighbor {{ neighbor.ip }} activate
+  {% endfor %}

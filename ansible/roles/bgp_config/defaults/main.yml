@@ -1,0 +1,6 @@
+---
+# defaults file for roles/bgp_config
+
+bgp_asn: 65000
+bgp_router_id: "10.0.0.1"
+bgp_neighbors: []

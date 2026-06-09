@@ -1,0 +1,9 @@
+bgp_asn: 65001
+bgp_router_id: 10.0.0.1
+bgp_neighbors:
+  - ip: 10.1.1.1
+    remote_as: 65101
+  - ip: 10.1.1.3
+    remote_as: 65102
+  - ip: 10.1.2.1
+    remote_as: 65000
