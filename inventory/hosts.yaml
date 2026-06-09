@@ -1,3 +1,5 @@
+# NOTE: Lab credentials only. Never use in production.
+# In production, use Ansible Vault or environment variables for secrets.
 spine1:
   hostname: 172.20.20.11
   platform: eos
