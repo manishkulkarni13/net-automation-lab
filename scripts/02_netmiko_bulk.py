@@ -1,13 +1,14 @@
+import os
 from netmiko import ConnectHandler
 from netmiko.exceptions import NetmikoAuthenticationException, NetmikoTimeoutException
 import json
 from datetime import datetime
 
 DEVICES = [
-    {"hostname":"spine1", "host":"172.20.20.11", "device_type":"arista_eos", "username":"admin", "password":"admin", "secret":"admin"},
-    {"hostname":"spine2", "host":"172.20.20.12", "device_type":"arista_eos", "username":"admin", "password":"admin", "secret":"admin"}, 
-    {"hostname":"leaf1", "host":"172.20.20.13", "device_type":"arista_eos", "username":"admin", "password":"admin", "secret":"admin"},
-    {"hostname":"leaf2", "host":"172.20.20.14", "device_type":"arista_eos", "username":"admin", "password":"admin", "secret":"admin"}   
+    {"hostname":"spine1", "host":"172.20.20.11", "device_type":"arista_eos", "username":os.environ["cEOS_USER"], "password":os.environ["cEOS_PASS"], "secret":os.environ["cEOS_PASS"]},
+    {"hostname":"spine2", "host":"172.20.20.12", "device_type":"arista_eos", "username":os.environ["cEOS_USER"], "password":os.environ["cEOS_PASS"], "secret":os.environ["cEOS_PASS"]}, 
+    {"hostname":"leaf1", "host":"172.20.20.13", "device_type":"arista_eos", "username":os.environ["cEOS_USER"], "password":os.environ["cEOS_PASS"], "secret":os.environ["cEOS_PASS"]},
+    {"hostname":"leaf2", "host":"172.20.20.14", "device_type":"arista_eos", "username":os.environ["cEOS_USER"], "password":os.environ["cEOS_PASS"], "secret":os.environ["cEOS_PASS"]}   
 ]
 
 results = {

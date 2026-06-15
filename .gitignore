@@ -9,3 +9,4 @@ clab-automation-lab/
 outputs/
 backups/
 .panos_key
+scrub_ceos_creds.py

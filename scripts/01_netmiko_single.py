@@ -1,12 +1,13 @@
+import os
 from netmiko import ConnectHandler
 from netmiko.exceptions import NetmikoTimeoutException, NetmikoAuthenticationException
 
 device = {
     "device_type": "arista_eos",
     "host": "172.20.20.11",
-    "username": "admin",
-    "password": "admin",
-    "secret":"admin"
+    "username": os.environ["cEOS_USER"],
+    "password": os.environ["cEOS_PASS"],
+    "secret":os.environ["cEOS_PASS"]
 }
 
 try:

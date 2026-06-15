@@ -1,3 +1,4 @@
+import os
 import requests
 import json
 import urllib3
@@ -18,7 +19,7 @@ def eapi_call(host, commands):
     response = requests.post(
         f"https://{host}/command-api",
         json=payload,
-        auth=("admin", "admin"),
+        auth=(os.environ["cEOS_USER"], os.environ["cEOS_PASS"]),
         verify=False
     )
     return response.json()["result"]

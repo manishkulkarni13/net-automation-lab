@@ -1,11 +1,12 @@
+import os
 from pygnmi.client import gNMIclient
 from pprint import pprint 
 
 #connect to spine1
 with gNMIclient(
     target=("172.20.20.11", 6030),
-    username="admin",
-    password="admin",
+    username=os.environ["cEOS_USER"],
+    password=os.environ["cEOS_PASS"],
     insecure=True
 ) as gc:
     # Get hostname

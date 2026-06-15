@@ -1,11 +1,12 @@
+import os
 from napalm import get_network_driver
 
 driver = get_network_driver("eos")
 
 device = driver(
     hostname="172.20.20.11",
-    username="admin",
-    password="admin",
+    username=os.environ["cEOS_USER"],
+    password=os.environ["cEOS_PASS"],
 )
 
 device.open()

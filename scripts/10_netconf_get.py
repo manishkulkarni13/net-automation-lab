@@ -1,3 +1,4 @@
+import os
 from ncclient import manager
 import xmltodict
 import json
@@ -5,8 +6,8 @@ import json
 conn = manager.connect(
     host="172.20.20.11",
     port=830,
-    username="admin",
-    password="admin",
+    username=os.environ["cEOS_USER"],
+    password=os.environ["cEOS_PASS"],
     hostkey_verify=False,
     device_params={"name": "default"}
 )
