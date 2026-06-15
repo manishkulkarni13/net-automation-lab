@@ -8,3 +8,4 @@ clab-automation-lab/
 .env
 outputs/
 backups/
+.panos_key
