@@ -158,3 +158,411 @@ Traceback (most recent call last):
     with open(f"outputs/rendered/{task.host.name}/{template}.cfg", "w") as f:
 NameError: name 'template' is not defined
 
+2026-06-18 14:40:25,408 - nornir.core.task -    ERROR -      start() - Host 'leaf2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 1139, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 172.20.20.14
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 516, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 490, in __init__
+    self._open()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 495, in _open
+    self.establish_connection()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 1161, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 172.20.20.14:22
+
+
+
+2026-06-18 14:40:25,409 - nornir.core.task -    ERROR -      start() - Host 'leaf2': task 'ensure_multiagent' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/scripts/18_multiagent_model.py", line 17, in ensure_multiagent
+    current = task.run(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2026-06-18 14:40:25,408 - nornir.core.task -    ERROR -      start() - Host 'leaf1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 1139, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 172.20.20.13
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 516, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 490, in __init__
+    self._open()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 495, in _open
+    self.establish_connection()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 1161, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 172.20.20.13:22
+
+
+
+2026-06-18 14:40:25,409 - nornir.core.task -    ERROR -      start() - Host 'spine2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 1139, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 172.20.20.12
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 516, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 490, in __init__
+    self._open()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 495, in _open
+    self.establish_connection()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 1161, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 172.20.20.12:22
+
+
+
+2026-06-18 14:40:25,408 - nornir.core.task -    ERROR -      start() - Host 'spine1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 1139, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 172.20.20.11
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 516, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 490, in __init__
+    self._open()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 495, in _open
+    self.establish_connection()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 1161, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 172.20.20.11:22
+
+
+
+2026-06-18 14:40:25,410 - nornir.core.task -    ERROR -      start() - Host 'spine1': task 'ensure_multiagent' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/scripts/18_multiagent_model.py", line 17, in ensure_multiagent
+    current = task.run(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2026-06-18 14:40:25,410 - nornir.core.task -    ERROR -      start() - Host 'spine2': task 'ensure_multiagent' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/scripts/18_multiagent_model.py", line 17, in ensure_multiagent
+    current = task.run(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2026-06-18 14:40:25,410 - nornir.core.task -    ERROR -      start() - Host 'leaf1': task 'ensure_multiagent' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/scripts/18_multiagent_model.py", line 17, in ensure_multiagent
+    current = task.run(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2026-06-18 14:47:19,112 - nornir.core.task -    ERROR -      start() - Host 'leaf1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 1139, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 172.20.20.13
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 516, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 490, in __init__
+    self._open()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 495, in _open
+    self.establish_connection()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 1161, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 172.20.20.13:22
+
+
+
+2026-06-18 14:47:19,112 - nornir.core.task -    ERROR -      start() - Host 'leaf1': task 'ensure_multiagent' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/scripts/18_multiagent_model.py", line 17, in ensure_multiagent
+    current = task.run(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2026-06-18 14:47:19,113 - nornir.core.task -    ERROR -      start() - Host 'leaf2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 1139, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 172.20.20.14
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 516, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 490, in __init__
+    self._open()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 495, in _open
+    self.establish_connection()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 1161, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 172.20.20.14:22
+
+
+
+2026-06-18 14:47:19,113 - nornir.core.task -    ERROR -      start() - Host 'leaf2': task 'ensure_multiagent' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/scripts/18_multiagent_model.py", line 17, in ensure_multiagent
+    current = task.run(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2026-06-18 14:47:19,113 - nornir.core.task -    ERROR -      start() - Host 'spine1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 1139, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 172.20.20.11
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 516, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 490, in __init__
+    self._open()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 495, in _open
+    self.establish_connection()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 1161, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 172.20.20.11:22
+
+
+
+2026-06-18 14:47:19,113 - nornir.core.task -    ERROR -      start() - Host 'spine1': task 'ensure_multiagent' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/scripts/18_multiagent_model.py", line 17, in ensure_multiagent
+    current = task.run(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2026-06-18 14:47:19,113 - nornir.core.task -    ERROR -      start() - Host 'spine2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 1139, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/paramiko/client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 172.20.20.12
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 516, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 490, in __init__
+    self._open()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 495, in _open
+    self.establish_connection()
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/netmiko/base_connection.py", line 1161, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 172.20.20.12:22
+
+
+
+2026-06-18 14:47:19,113 - nornir.core.task -    ERROR -      start() - Host 'spine2': task 'ensure_multiagent' failed with traceback:
+Traceback (most recent call last):
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/scripts/18_multiagent_model.py", line 17, in ensure_multiagent
+    current = task.run(
+  File "/home/mkulkarni/Desktop/Upskill/net-automation-lab/netauto/lib/python3.10/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
