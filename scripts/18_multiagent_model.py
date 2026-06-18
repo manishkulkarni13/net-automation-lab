@@ -17,6 +17,7 @@ def ensure_multiagent(task: Task) -> Result:
     current = task.run(
         task=netmiko_send_command,
         command_string="show running-config | include service routing protocols model",
+        enable = True,
     )
     if "multi-agent" in current.result:
         return Result(host=task.host, result=f"{task.host.name}: already multi-agent — skip", changed=False)
