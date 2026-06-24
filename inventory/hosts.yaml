@@ -14,7 +14,7 @@ spine1:
   data:
     loopback_ip: 10.0.0.1
     bgp:
-      local_as : 65001
+      local_as: 65001
       neighbors:
         - ip: 10.1.1.1
           remote_as: 65101
@@ -24,7 +24,7 @@ spine1:
           remote_as: 65000
     interfaces:
         - name: Ethernet1
-          ip : 10.1.1.0/31
+          ip: 10.1.1.0/31
           description: to_leaf1
         - name: Ethernet2 
           ip: 10.1.1.2/31
@@ -80,6 +80,7 @@ leaf1:
         secret: admin
   data:
     loopback_ip: 10.0.1.1
+    vtep_ip: 10.0.2.1/32
     bgp:
       local_as: 65101
       neighbors:
@@ -108,6 +109,7 @@ leaf2:
         secret: admin 
   data:
     loopback_ip: 10.0.1.2
+    vtep_ip: 10.0.2.2/32
     bgp:
       local_as: 65102
       neighbors:
